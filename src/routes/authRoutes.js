@@ -1,3 +1,4 @@
+console.log('Si se usa este archivo authRoutes.js')
 const express=require('express');
 const authController=require('../controllers/authController');
 
