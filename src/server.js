@@ -1,6 +1,7 @@
 const express =require('express');
 const router = require('./routes/authRoutes');
 const { error,errorsHandlers } = require('./middlewares/erroHandlers');
+const { registerUser } = require('./controllers/authController');
 
 
 
@@ -12,7 +13,7 @@ app.get('/',(req,res)=>{
     res.json({message:'API Auth is running'});
 });
 
-app.use('/api/auth',router);
+app.post('/api/auth',registerUser);
 
 app.use((req,res,next)=>{
     error(404,`${req.originalUrl} not Found`,next)
