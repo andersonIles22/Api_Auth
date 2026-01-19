@@ -13,6 +13,10 @@ app.get('/',(req,res)=>{
     res.json({message:'API Auth is running'});
 });
 
+app.use((req, res, next) => {
+    console.log(`Solicitud entrante: ${req.method} ${req.url}`);
+    next();
+});
 app.post('/api/auth/register',registerUser);
 
 app.use((req,res,next)=>{
