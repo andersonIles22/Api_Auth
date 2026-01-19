@@ -15,7 +15,7 @@ app.get('/',(req,res)=>{
 app.use('/api/auth',router);
 
 app.use((req,res,next)=>{
-    error(404,`${req.urlOriginal} not Found`,next)
+    error(404,`${req.originalUrl} not Found`,next)
 });
 
 app.use(errorsHandlers);
