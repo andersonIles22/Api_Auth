@@ -13,7 +13,7 @@ app.get('/',(req,res)=>{
     res.json({message:'API Auth is running'});
 });
 
-app.post('/api/auth',registerUser);
+app.post('/api/auth/register',registerUser);
 
 app.use((req,res,next)=>{
     error(404,`${req.originalUrl} not Found`,next)
